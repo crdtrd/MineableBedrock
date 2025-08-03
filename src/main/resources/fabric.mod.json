@@ -11,7 +11,7 @@
   "environment": "server",
   "entrypoints": {
     "fabric-datagen": [
-      "com.drtdrc.mineablebedrock.MineableBedrockDataGenerator"
+
     ],
     "main": [
       "com.drtdrc.mineablebedrock.MineableBedrock"
