@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MineableBedrock.client.iml" filepath="$PROJECT_DIR$/.idea/modules/MineableBedrock.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MineableBedrock.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MineableBedrock.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MineableBedrock.test.iml" filepath="$PROJECT_DIR$/.idea/modules/MineableBedrock.test.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "mineablebedrock",
+  "version": "1.0.0",
+  "name": "MineableBedrock",
+  "description": "Mineable Bedrock. Duh",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/mineablebedrock/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.drtdrc.mineablebedrock.MineableBedrockDataGenerator"
+    ],
+    "main": [
+      "com.drtdrc.mineablebedrock.MineableBedrock"
+    ]
+  },
+  "mixins": [
+    "mineablebedrock.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
