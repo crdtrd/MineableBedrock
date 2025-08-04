@@ -1,15 +1,14 @@
 {
-  "required": true,
-  "minVersion": "0.8",
-  "package": "com.drtdrc.mineablebedrock.mixins",
-  "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "BedrockBlockMixin"
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  },
-  "overwrites": {
-    "requireAnnotations": true
-  }
+	"required": true,
+	"package": "com.drtdrc.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"BedrockBlockMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
 }

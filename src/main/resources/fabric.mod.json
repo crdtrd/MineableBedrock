@@ -1,28 +1,44 @@
 {
-  "schemaVersion": 1,
-  "id": "mineablebedrock",
-  "version": "1.0.0",
-  "name": "MineableBedrock",
-  "description": "Mineable Bedrock. Duh",
-  "authors": [],
-  "contact": {},
-  "license": "All-Rights-Reserved",
-  "icon": "assets/mineablebedrock/icon.png",
-  "environment": "server",
-  "entrypoints": {
-    "fabric-datagen": [
-
-    ],
-    "main": [
-      "com.drtdrc.mineablebedrock.MineableBedrock"
-    ]
-  },
-  "mixins": [
-    "mineablebedrock.mixins.json"
-  ],
-  "depends": {
-    "fabricloader": ">=${loader_version}",
-    "fabric": "*",
-    "minecraft": "${minecraft_version}"
-  }
+	"schemaVersion": 1,
+	"id": "mineablebedrock",
+	"version": "${version}",
+	"name": "MineableBedrock",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/mineablebedrock/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.drtdrc.MineableBedrock"
+		],
+		"client": [
+			"com.drtdrc.MineableBedrockClient"
+		],
+		"fabric-datagen": [
+			"com.drtdrc.MineableBedrockDataGenerator"
+		]
+	},
+	"mixins": [
+		"mineablebedrock.mixins.json",
+		{
+			"config": "mineablebedrock.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
 }

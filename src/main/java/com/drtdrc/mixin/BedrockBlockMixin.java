@@ -1,4 +1,4 @@
-package com.drtdrc.mineablebedrock.mixins;
+package com.drtdrc.mixin;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
