@@ -3,7 +3,9 @@
 	"package": "com.drtdrc.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"BedrockBlockMixin"
+		"BlocksMixin",
+		"ServerPlayerInteractionManagerMixin",
+		"ServerWorldMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

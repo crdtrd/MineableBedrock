@@ -3,9 +3,9 @@
 	"id": "mineablebedrock",
 	"version": "${version}",
 	"name": "MineableBedrock",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Mineable Bedrock. Duh",
 	"authors": [
-		"Me!"
+		"drtdrc"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -18,25 +18,17 @@
 		"main": [
 			"com.drtdrc.MineableBedrock"
 		],
-		"client": [
-			"com.drtdrc.MineableBedrockClient"
-		],
 		"fabric-datagen": [
-			"com.drtdrc.MineableBedrockDataGenerator"
+			"com.drtdrc.datagen.MineableBedrockDataGenerator"
 		]
 	},
 	"mixins": [
-		"mineablebedrock.mixins.json",
-		{
-			"config": "mineablebedrock.client.mixins.json",
-			"environment": "client"
-		}
+		"mineablebedrock.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.21.8",
-		"java": ">=21",
-		"fabric-api": "*"
+		"java": ">=21"
 	},
 	"suggests": {
 		"another-mod": "*"
