@@ -24,7 +24,6 @@ loom {
 	mods {
 		"mineablebedrock" {
 			sourceSet sourceSets.main
-			sourceSet sourceSets.client
 		}
 	}
 
