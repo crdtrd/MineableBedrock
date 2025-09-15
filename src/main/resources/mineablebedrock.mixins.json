@@ -4,8 +4,7 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"BlocksMixin",
-		"ServerPlayerInteractionManagerMixin",
-		"ServerWorldMixin"
+		"ServerPlayerInteractionManagerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
