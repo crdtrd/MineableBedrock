@@ -2,6 +2,7 @@ package com.drtdrc.mixin;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.network.packet.s2c.play.BlockBreakingProgressS2CPacket;
 import net.minecraft.particle.BlockStateParticleEffect;
 import net.minecraft.particle.ParticleTypes;
@@ -44,7 +45,7 @@ public abstract class ServerPlayerInteractionManagerMixin {
         if(!this.mining) return;
 
         BlockState state = this.world.getBlockState(this.miningPos);
-        if (state.isAir()) return;
+        if (!state.isOf(Blocks.BEDROCK)) return;
 
         float f = this.continueMining(state, this.miningPos, this.startMiningTime);
         if (f >= 1.0f) {
@@ -60,6 +61,7 @@ public abstract class ServerPlayerInteractionManagerMixin {
     @Inject(method = "tryBreakBlock(Lnet/minecraft/util/math/BlockPos;)Z",
             at = @At("HEAD"))
     private void captureOriginal(BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
+
         this.oldState = this.world.getBlockState(pos);
     }
 
@@ -75,6 +77,9 @@ public abstract class ServerPlayerInteractionManagerMixin {
             )
     )
     private void onTryBreakBlockOnBroken(BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
+
+        if (!oldState.isOf(Blocks.BEDROCK)) return;
+
         this.world.spawnParticles(
                 new BlockStateParticleEffect(ParticleTypes.BLOCK, oldState),
                 pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, // x, y, z
@@ -92,8 +97,10 @@ public abstract class ServerPlayerInteractionManagerMixin {
             method = "continueMining(Lnet/minecraft/block/BlockState;Lnet/minecraft/util/math/BlockPos;I)F",
             at = @At("RETURN")
     )
-    private void onContinueMining(BlockState state, BlockPos pos, int startTime,
-                                  CallbackInfoReturnable<Float> cir) {
+    private void onContinueMining(BlockState state, BlockPos pos, int startTime, CallbackInfoReturnable<Float> cir) {
+
+        if (!state.isOf(Blocks.BEDROCK)) return;
+
         // recalc exactly what vanilla did:
         int ticks = this.tickCounter - startTime;
         float f = state.calcBlockBreakingDelta(this.player, this.player.getWorld(), pos) * (ticks + 1);
