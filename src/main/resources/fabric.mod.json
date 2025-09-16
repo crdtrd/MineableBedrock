@@ -5,11 +5,10 @@
 	"name": "MineableBedrock",
 	"description": "Mineable Bedrock. Duh",
 	"authors": [
-		"drtdrc"
+		"crdtrd"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"issues": "https://github.com/crdtrd/MineableBedrock/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/mineablebedrock/icon.png",
